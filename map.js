@@ -20,6 +20,7 @@ require(
                 subtext: '纯属虚构',
                 x: 'center'
             },
+            //backgroundColor: '#9fd7dd',
             tooltip: {
                 trigger: 'item'
             },
@@ -32,14 +33,14 @@ require(
                 x: 'left',
                 y: 'bottom',
                 splitList: [
-                    { start: 10000 },
-                    { start: 1000, end: 9999 },
-                    { start: 100, end: 999 },
-                    { start: 10, end: 99 },
-                    { start: 1, end: 9 },
-                    { start: 0, end: 0 },
+                    { start: 10000, color: '#372a28' },
+                    { start: 1000, end: 9999, color: '#4e160f' },
+                    { start: 100, end: 999, color: '#974236' },
+                    { start: 10, end: 99, color: '#ee7263' },
+                    { start: 1, end: 9, color: '#f5bba7' },
+                    { start: 0, end: 0, color: '#eeeeee' },
                 ],
-                color: ['#760000','#b02016','#ff0000','#ff5a4e','#ffaa7f','#ffffff']
+                color: ['#E0022B', '#E09107', '#A3E00B']
             },
             toolbox: {
                 show: true,
@@ -72,7 +73,11 @@ require(
                             textStyle: {
                                 color: 'black'
                             }
-                        }
+                        },
+                        borderWidth: 2,
+                        borderColor: '#8ac2e5',
+                        color: '#9fd7dd',
+                        areaStyle: { color: '#9fd7dd' }
                     },
                     emphasis: { label: { show: true } }
                 },
