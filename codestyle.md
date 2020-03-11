@@ -22,7 +22,7 @@
 * 嵌套的节点应该缩进（四个空格）。
 * 在属性上，使用双引号，不要使用单引号。
 * 不要在自动闭合标签结尾处使用斜线 - HTML5 规范 指出他们是可选的。
-* 不要忽略可选的关闭标签（例如，</li> 和</body>）。
+* 不要忽略可选的关闭标签。
 ### 字符编码
 通过声明一个明确的字符编码，让浏览器轻松、快速的确定适合网页内容的渲染方式。
 ` <head> <meta charset="UTF-8"> </head> `
@@ -113,7 +113,9 @@ Positioning 处在第一位，因为他可以使一个元素脱离正常文本�
 * 最少三行，格式如下
 `  /*  * 注释内容与星标前保留一个空格  */  `
 * 前边留空一行
+
 __何时使用__
+
 * 难于理解的代码段
 * 可能存在错误的代码段
 * 浏览器特殊的HACK代码
@@ -123,7 +125,9 @@ __何时使用__
 * 各类标签 @param @method 等 参考[http://usejsdoc.org/](http://usejsdoc.org/)
 * 格式如下
 ` /**  * here boy, look here , here is girl  * @method lookGril  * @param {Object} balabalabala  * @return {Object} balabalabala  */ `
+
 __用在哪里__
+
 * All methods
 * All constructors
 * All objects with documented methods
