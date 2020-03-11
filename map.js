@@ -20,7 +20,7 @@ require(
                 subtext: '纯属虚构',
                 x: 'center'
             },
-            //backgroundColor: '#9fd7dd',
+            backgroundColor: '#9fd7dd',
             tooltip: {
                 trigger: 'item'
             },
