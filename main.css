@@ -1,5 +1,14 @@
+body {
+    text-align: center;
+}
 #global-map {
     margin: 0 auto;
     height: 600px;
     width: 1000px;
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline;
 }
