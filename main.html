@@ -3,12 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" href="main.css" />
     <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-    <script type="text/javascript" src="map.js"></script>
+    <script src="map.js"></script>
 </head>
 
 <body>
+    <div id="header">
+        <ul>
+            <li>现有确诊:xxx</li>
+            <li>现有疑似:xxx</li>
+            <li>现有重症:xxx</li>
+            <li>累计确诊:xxx</li>
+            <li>累计治愈:xxx</li>
+            <li>累计死亡:xxx</li>
+        </ul>
+    </div>
+
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="global-map"></div>
     <!-- ECharts单文件引入 -->

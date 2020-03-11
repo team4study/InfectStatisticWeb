@@ -39,7 +39,7 @@ require(
                     { start: 1, end: 9 },
                     { start: 0, end: 0 },
                 ],
-                color: ['#aa0000']
+                color: ['#760000','#b02016','#ff0000','#ff5a4e','#ffaa7f','#ffffff']
             },
             toolbox: {
                 show: true,
@@ -61,7 +61,7 @@ require(
                 }
             },
             series: [{
-                name: '确诊数(点击可查看详情)',
+                name: '确诊人数(点击可查看详情)',
                 type: 'map',
                 mapType: 'china',
                 roam: false,
@@ -70,7 +70,7 @@ require(
                         label: {
                             show: true,
                             textStyle: {
-                                color: "rgb(249, 249, 249)"
+                                color: 'black'
                             }
                         }
                     },
