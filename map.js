@@ -21,7 +21,7 @@ function init() {
                 subtext: '纯属虚构',
                 x: 'center'
             },
-            backgroundColor: '#9fd7dd',
+            backgroundColor: '#f7f7f7',
             tooltip: {
                 trigger: 'item'
             },
@@ -34,12 +34,12 @@ function init() {
                 x: 'left',
                 y: 'bottom',
                 splitList: [
-                    { start: 10000, color: '#372a28' },
-                    { start: 1000, end: 9999, color: '#4e160f' },
-                    { start: 100, end: 999, color: '#974236' },
-                    { start: 10, end: 99, color: '#ee7263' },
-                    { start: 1, end: 9, color: '#f5bba7' },
-                    { start: 0, end: 0, color: '#eeeeee' },
+                    { start: 10000, color: '#480f10' },
+                    { start: 1000, end: 9999, color: '#772526' },
+                    { start: 100, end: 999, color: '#d56355' },
+                    { start: 10, end: 99, color: '#e9a188' },
+                    { start: 1, end: 9, color: '#faebd2' },
+                    { start: 0, end: 0, color: '#ffffff' },
                 ],
                 color: ['#E0022B', '#E09107', '#A3E00B']
             },

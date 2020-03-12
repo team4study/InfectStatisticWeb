@@ -1,13 +1,11 @@
-
-
 #rall-timeData {
     border: 2px solid #eeeeee;
     border-radius: 12px;
     margin: 5px;
-    background-color: rgba(130, 210, 10, 0);
+    background-color: gray;
     display: inline-block;
     width: calc(100% - 14px);
-    overflow: hidden;
+    height: 50px;
 }
 
 #header {
@@ -64,4 +62,40 @@
     margin: 0 auto;
     height: 600px;
     width: 1000px;
+}
+
+#switchButton {
+    clear: both;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#totalButton {
+    background-color: #66C1E4;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+}
+
+#totalButton:hover {
+    background: #CF7A7A
+}
+
+#rall-timeButton {
+    background-color: #66C1E4;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+}
+
+#rall-timeButton:hover {
+    background: #CF7A7A
 }
