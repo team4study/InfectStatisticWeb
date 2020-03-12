@@ -120,6 +120,8 @@ require(
             }]
         };
 
+        document.getElementById('choose-date').valueAsDate = new Date();
+
         // 为echarts对象加载数据 
         myChart.setOption(option);
     }
