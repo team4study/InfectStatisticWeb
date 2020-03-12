@@ -1,18 +1,19 @@
-require.config({
-    paths: {
-        echarts: 'http://echarts.baidu.com/build/dist'
-    }
-});
+function init() {
+    var bo1 = document.getElementById("rall-timeButton");
+    var bo2 = document.getElementById("totalButton");
+    y(1);
+    y(2);
 
-// 使用
-require(
-    [
-        'echarts',
-        'echarts/chart/map'
-    ],
-    function(ec) {
+    bo1.onclick = function() {
+        y(3);
+    }
+    bo2.onclick = function() {
+        y(4);
+    }
+
+    function y(x) {
         // 基于准备好的dom，初始化echarts图表
-        var myChart = ec.init(document.getElementById('global-map'));
+        var myChart = echarts.init(document.getElementById('global-map'));
 
         var option = {
             title: {
@@ -82,7 +83,7 @@ require(
                     emphasis: { label: { show: true } }
                 },
                 data: [
-                    { name: '北京', value: Math.round(Math.random() * 2000) },
+                    { name: '北京', value: x },
                     { name: '天津', value: Math.round(Math.random() * 2000) },
                     { name: '上海', value: Math.round(Math.random() * 2000) },
                     { name: '重庆', value: Math.round(Math.random() * 2000) },
@@ -121,6 +122,7 @@ require(
         };
 
         // 为echarts对象加载数据 
-        myChart.setOption(option);
+        myChart.setOption(option, true, true);
     }
-);
+}
+window.onload = init;

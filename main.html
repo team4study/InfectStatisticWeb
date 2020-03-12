@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <title>ECharts</title>
     <link rel="stylesheet" href="main.css" />
-    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script src="https://www.echartsjs.com/examples/vendors/jquery/jquery.js"></script>
+    <!-- 引入 echarts.js -->
+    <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js?_v_=1578305236132"></script>
+    <!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->
+    <script src="https://www.echartsjs.com/examples/vendors/echarts/map/js/china.js?_v_=1578305236132"></script>
     <script src="map.js"></script>
 </head>
 
 <body>
+    <!--展示统计的数据-->
     <div id="real-timeData">
         <ul id="header">
             <li>
@@ -37,6 +42,12 @@
                 <span dataContent="">累计治愈</span>
             </li>
         </ul>
+    </div>
+
+    <!--切换现有确诊和累计确诊的按钮-->
+    <div id="switchButton">
+        <button id="rall-timeButton">现有确诊</button>
+        <button id="totalButton">累计确诊</button>
     </div>
 
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
