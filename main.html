@@ -10,6 +10,7 @@
     <!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->
     <script src="https://www.echartsjs.com/examples/vendors/echarts/map/js/china.js?_v_=1578305236132"></script>
     <script src="map.js"></script>
+    <script src="line.js"></script>
 </head>
 
 <body>
@@ -52,7 +53,8 @@
         <button id="totalButton">累计确诊</button>
     </div>
 
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- 为ECharts-map准备一个具备大小（宽高）的Dom -->
     <div id="global-map"></div>
-    <!-- ECharts单文件引入 -->
+    <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+    <div id="global-line"></div>
 </body>
