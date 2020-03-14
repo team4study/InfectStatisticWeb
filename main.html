@@ -17,7 +17,7 @@
     <!--展示统计的数据-->
     <div id="real-timeData">
         <label>日期：</label>
-        <input type="date" id="choose-date" onchange="y()" />
+        <input type="date" id="choose-date" onchange="echartsMap(1)" />
         <ul id="header">
             <li>
                 <strong style="color: #f74c31;" dataContent="">0</strong>
@@ -55,13 +55,24 @@
 
     <!-- 为ECharts-map准备一个具备大小（宽高）的Dom -->
     <div id="global-map"></div>
-    <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-    <div id="global-line"></div>
+    
     <div id="getId">
-        <div class="show" id="tabC1"></div>
-        <div class="hidden" id="tabC2"></div>
-        <div class="hidden" id="tabC3"></div>
-        <div class="hidden" id="tabC4"></div>
+        <div class="show" id="tabC1">
+			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+			<div id="global-line1"></div>
+		</div>
+        <div class="hidden" id="tabC2">
+			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+			<div id="global-line2"></div>
+		</div>
+        <div class="hidden" id="tabC3">
+			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+			<div id="global-line3"></div>
+		</div>
+        <div class="hidden" id="tabC4">
+			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+			<div id="global-line4"></div>
+		</div>
         <div class="tabT">
             <ul class="tab">
                 <li id="tabId1" class="current" onclick="tab('tabId1','tabC1');">疫情新增趋势</li>

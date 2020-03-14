@@ -162,28 +162,48 @@ lineTabData4 = [{
 lineLegend4 = ['治愈率', '死亡率'];
 
 function init1() {
-    echartsLine(0);
+    echartsLine(1);
+}
 
-    function tab(tabId, tabC) {
-        var len = document.getElementById('getId').getElementsByTagName('li').length;
-        for (i = 1; i <= len; i++) {
-            if ("tabId" + i == tabId) {
-                document.getElementById(tabId).className = "current";
-            } else {
-                document.getElementById("tabId" + i).className = "";
-            }
-            if ("tabC" + i == tabC) {
-                document.getElementById(tabC).className = "show";
-            } else {
-                document.getElementById("tabC" + i).className = "hidden";
-            }
+function tab(tabId, tabC) {
+    var len = document.getElementById('getId').getElementsByTagName('li').length;
+    for (i = 1; i <= len; i++) {
+        if ("tabId" + i == tabId) {
+            document.getElementById(tabId).className = "current";
+            echartsLine(i);
+        } else {
+            document.getElementById("tabId" + i).className = "";
+        }
+        if ("tabC" + i == tabC) {
+            document.getElementById(tabC).className = "show";
+            echartsLine(i);
+        } else {
+            document.getElementById("tabC" + i).className = "hidden";
         }
     }
 }
 
-function echartsLine(x) {
-    var myChart = echarts.init(document.getElementById('global-line'));
-
+function echartsLine(key) {
+    var glstring = 'global-line' + key;
+    var myChart = echarts.init(document.getElementById(glstring));
+    var lineLg;
+    var lineTD;
+    if (key == 1) {
+        lineLg = lineLegend1;
+        lineTD = lineTabData1;
+    }
+    if (key == 2) {
+        lineLg = lineLegend2;
+        lineTD = lineTabData2;
+    }
+    if (key == 3) {
+        lineLg = lineLegend3;
+        lineTD = lineTabData3;
+    }
+    if (key == 4) {
+        lineLg = lineLegend4;
+        lineTD = lineTabData4;
+    }
     var option = {
         tooltip: {
             trigger: 'axis'
@@ -219,9 +239,9 @@ function echartsLine(x) {
         yAxis: [{
             type: 'value'
         }],
-        series: lineTabData3,
+        series: lineTD,
         legend: {
-            data: lineLegend3
+            data: lineLg
         }
     };
 
