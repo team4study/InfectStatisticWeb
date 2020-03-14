@@ -13,25 +13,24 @@ var totcure = totalCure(getQueryString("name"));
 var riqi = getDate(getNowFormatDate());
 //获取今天日期，格式YYYY-MM-DD
 function getNowFormatDate() {
-	var datechoose = document.getElementById('choose-date');
-	if (datechoose != null) {
-		return datachoose.value;
-	}
-	else {
-		var date = new Date();
-		var seperator1 = "-";
-		var year = date.getFullYear();
-		var month = date.getMonth() + 1;
-		var strDate = date.getDate();
-		if (month >= 1 && month <= 9) {
-			month = "0" + month;
-		}
-		if (strDate >= 0 && strDate <= 9) {
-			strDate = "0" + strDate;
-		}
-		var currentdate = year + seperator1 + month + seperator1 + strDate;
-		return currentdate;
-	}
+    var datechoose = document.getElementById('choose-date');
+    if (datechoose != null) {
+        return datachoose.value;
+    } else {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
 }
 
 var newConf = [];
@@ -58,6 +57,15 @@ for (i = 0; i < totDead.length; i++) {
         newDead.push(totDead[i] - totDead[i - 1]);
     }
 }
+var cureRate = [];
+for (i = 0; i < totConf; i++) {
+    cureRate.push((totcure[i] / totConf[i]));
+}
+
+var deadRate = [];
+for (i = 0; i < totConf; i++) {
+    deadRate.push((totDead[i] / totConf[i]));
+}
 // Data.forEach(element => {
 //     quezhen.push(element.value)
 //     riqi.push(element.data)
@@ -78,22 +86,22 @@ lineTabData1 = [{
         //data: [120, 132, 101, 134, 90, 230, 210]
         data: newConf
     },
-/*    {
-        name: '新增疑似',
-        type: 'line',
-        //tiled: '总量',
-        itemStyle: {
-            normal: {
-                color: '#ec9217', //改变折线点的颜色
-                lineStyle: {
-                    color: '#ec9217' //改变折线颜色
+    /*    {
+            name: '新增疑似',
+            type: 'line',
+            //tiled: '总量',
+            itemStyle: {
+                normal: {
+                    color: '#ec9217', //改变折线点的颜色
+                    lineStyle: {
+                        color: '#ec9217' //改变折线颜色
+                    }
                 }
-            }
+            },
+            //data: [220, 182, 191, 234, 290, 330, 310]
+            data: totConf
         },
-        //data: [220, 182, 191, 234, 290, 330, 310]
-        data: totConf
-    },
-*/
+    */
     {
         name: '新增治愈',
         type: 'line',
@@ -140,22 +148,22 @@ lineTabData2 = [{
         },
         data: curConf
     },
-/*
-    {
-        name: '现有疑似',
-        type: 'line',
-        tiled: '总量',
-        itemStyle: {
-            normal: {
-                color: '#ec9217', //改变折线点的颜色
-                lineStyle: {
-                    color: '#ec9217' //改变折线颜色
+    /*
+        {
+            name: '现有疑似',
+            type: 'line',
+            tiled: '总量',
+            itemStyle: {
+                normal: {
+                    color: '#ec9217', //改变折线点的颜色
+                    lineStyle: {
+                        color: '#ec9217' //改变折线颜色
+                    }
                 }
-            }
+            },
+            data: [150, 232, 201, 154, 190, 330, 410]
         },
-        data: [150, 232, 201, 154, 190, 330, 410]
-    },
-*/
+    */
     {
         name: '累计确诊',
         type: 'line',
@@ -214,7 +222,7 @@ lineTabData4 = [{
                 }
             }
         },
-        data: [150, 232, 201, 154, 190, 330, 410]
+        data: cureRate
     },
     {
         name: '死亡率',
@@ -228,7 +236,7 @@ lineTabData4 = [{
                 }
             }
         },
-        data: [320, 332, 301, 334, 390, 330, 320]
+        data: deadRate
     }
 ];
 lineLegend4 = ['治愈率', '死亡率'];
