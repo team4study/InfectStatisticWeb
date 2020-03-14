@@ -135,7 +135,7 @@ function getQueryString(name) {
 	if (r != null) {
 		return decodeURI(r[2]);
 	} else {
-		return null;
+		return '全国';
 	}
 }
 //window.onload = init;

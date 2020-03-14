@@ -18,7 +18,7 @@ var riqi = getDate("2020-02-03");
 lineTabData1 = [{
         name: '新增确诊',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#e83132', //改变折线点的颜色
@@ -33,7 +33,7 @@ lineTabData1 = [{
     {
         name: '新增疑似',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#ec9217', //改变折线点的颜色
@@ -48,7 +48,7 @@ lineTabData1 = [{
     {
         name: '新增治愈',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#10aeb5', //改变折线点的颜色
@@ -63,7 +63,7 @@ lineTabData1 = [{
     {
         name: '新增死亡',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#4d5054', //改变折线点的颜色
@@ -80,7 +80,7 @@ lineLegend1 = ['新增确诊', '新增疑似', '新增治愈', '新增死亡'];
 lineTabData2 = [{
         name: '现有确诊',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#fe9688', //改变折线点的颜色
@@ -94,7 +94,7 @@ lineTabData2 = [{
     {
         name: '现有疑似',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#ec9217', //改变折线点的颜色
@@ -108,7 +108,7 @@ lineTabData2 = [{
     {
         name: '累计确诊',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#e83132', //改变折线点的颜色
@@ -124,7 +124,7 @@ lineLegend2 = ['现有确诊', '现有疑似', '累计确诊'];
 lineTabData3 = [{
         name: '治愈人数',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#10aeb5', //改变折线点的颜色
@@ -138,7 +138,7 @@ lineTabData3 = [{
     {
         name: '死亡人数',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#4d5054', //改变折线点的颜色
@@ -154,7 +154,7 @@ lineLegend3 = ['治愈人数', '死亡人数'];
 lineTabData4 = [{
         name: '治愈率',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#10aeb5', //改变折线点的颜色
@@ -168,7 +168,7 @@ lineTabData4 = [{
     {
         name: '死亡率',
         type: 'line',
-        stack: '总量',
+        tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#4d5054', //改变折线点的颜色
