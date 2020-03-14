@@ -1,19 +1,20 @@
-var Data = [];
-switch (getQueryString("name")) {
-    case "安徽":
-        Data = data_anhui;
-        break;
+// var Data = [];
+// switch (getQueryString("name")) {
+//     case "安徽":
+//         Data = data_anhui;
+//         break;
 
-}
-Data = totalConfirmed(getQueryString("name"));
-Data.reverse();
+// }
+var totConf = totalConfirmed(getQueryString("name"));
+//Data.reverse();
 var quezhen = [];
 var datechoose = document.getElementById('choose-date');
-var riqi = getDate(datechoose.value);
-Data.forEach(element => {
-    quezhen.push(element.value)
-    riqi.push(element.data)
-});
+var riqi = getDate("2020-02-03");
+// Data.forEach(element => {
+//     quezhen.push(element.value)
+//     riqi.push(element.data)
+// });
+//totConf.length = riqi.length;
 lineTabData1 = [{
         name: '新增确诊',
         type: 'line',
@@ -27,7 +28,7 @@ lineTabData1 = [{
             }
         },
         //data: [120, 132, 101, 134, 90, 230, 210]
-        data: Data
+        data: totConf
     },
     {
         name: '新增疑似',
@@ -42,7 +43,7 @@ lineTabData1 = [{
             }
         },
         //data: [220, 182, 191, 234, 290, 330, 310]
-        data: Data
+        data: totConf
     },
     {
         name: '新增治愈',
@@ -56,7 +57,7 @@ lineTabData1 = [{
                 }
             }
         },
-        data: Data
+        data: totConf
             //data: [150, 232, 201, 154, 190, 330, 410]
     },
     {
@@ -71,7 +72,7 @@ lineTabData1 = [{
                 }
             }
         },
-        data: Data
+        data: totConf
             //data: [320, 332, 301, 334, 390, 330, 320]
     },
 ];
