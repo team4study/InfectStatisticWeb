@@ -219,9 +219,9 @@ function echartsLine(x) {
         yAxis: [{
             type: 'value'
         }],
-        series: lineTabData2,
+        series: lineTabData3,
         legend: {
-            data: lineLegend2
+            data: lineLegend3
         }
     };
 
