@@ -10,8 +10,30 @@ var totConf = totalConfirmed(getQueryString("name"));
 var curConf = currentConfirmed(getQueryString("name"));
 var totDead = totalDead(getQueryString("name"));
 var totcure = totalCure(getQueryString("name"));
-var datechoose = document.getElementById('choose-date');
-var riqi = getDate("2020-02-03");
+var riqi = getDate(getNowFormatDate());
+//获取今天日期，格式YYYY-MM-DD
+function getNowFormatDate() {
+	var datechoose = document.getElementById('choose-date');
+	if (datechoose != null) {
+		return datachoose.value;
+	}
+	else {
+		var date = new Date();
+		var seperator1 = "-";
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var strDate = date.getDate();
+		if (month >= 1 && month <= 9) {
+			month = "0" + month;
+		}
+		if (strDate >= 0 && strDate <= 9) {
+			strDate = "0" + strDate;
+		}
+		var currentdate = year + seperator1 + month + seperator1 + strDate;
+		return currentdate;
+	}
+}
+
 var newConf = [];
 for (i = 0; i < totConf.length; i++) {
     if (i == 0)
@@ -56,7 +78,7 @@ lineTabData1 = [{
         //data: [120, 132, 101, 134, 90, 230, 210]
         data: newConf
     },
-    {
+/*    {
         name: '新增疑似',
         type: 'line',
         //tiled: '总量',
@@ -71,6 +93,7 @@ lineTabData1 = [{
         //data: [220, 182, 191, 234, 290, 330, 310]
         data: totConf
     },
+*/
     {
         name: '新增治愈',
         type: 'line',
@@ -117,6 +140,7 @@ lineTabData2 = [{
         },
         data: curConf
     },
+/*
     {
         name: '现有疑似',
         type: 'line',
@@ -131,6 +155,7 @@ lineTabData2 = [{
         },
         data: [150, 232, 201, 154, 190, 330, 410]
     },
+*/
     {
         name: '累计确诊',
         type: 'line',
