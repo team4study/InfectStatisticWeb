@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Province</title>
-		<link rel="stylesheet" href="main.css" />
-		<script src="https://www.echartsjs.com/examples/vendors/jquery/jquery.js"></script>
-		<!-- 引入 echarts.js -->
-		<script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js?_v_=1578305236132"></script>
-		<!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->
-		<script src="https://www.echartsjs.com/examples/vendors/echarts/map/js/china.js?_v_=1578305236132"></script>
-		<script src="map.js"></script>
-		<script src="line.js"></script>
-	</head>
-	<body>
-		<a href="main.html">back</a>
-		<div id="getId">
-			<script>
-				var name = getQueryString("name");
-				document.write(name);
-				
-			</script>
-		    <div class="show" id="tabC1">
-				<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-				<div id="global-line1"></div>
-			</div>
-		    <div class="hidden" id="tabC2">
-				<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-				<div id="global-line2"></div>
-			</div>
-		    <div class="hidden" id="tabC3">
-				<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-				<div id="global-line3"></div>
-			</div>
-		    <div class="hidden" id="tabC4">
-				<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-				<div id="global-line4"></div>
-			</div>
-		    <div class="tabT">
-		        <ul class="tab">
-		            <li id="tabId1" class="current" onclick="tab('tabId1','tabC1');">疫情新增趋势</li>
-		            <li id="tabId2" onclick="tab('tabId2','tabC2');">确诊疑似趋势</li>
-		            <li id="tabId3" onclick="tab('tabId3','tabC3');">累计治愈死亡</li>
-		            <li id="tabId4" onclick="tab('tabId4','tabC4');">治愈率死亡率</li>
-		        </ul>
-		    </div>
-		</div>
-	</body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Province</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://www.echartsjs.com/examples/vendors/jquery/jquery.js"></script>
+    <!-- 引入 echarts.js -->
+    <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js?_v_=1578305236132"></script>
+    <!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->
+    <script src="https://www.echartsjs.com/examples/vendors/echarts/map/js/china.js?_v_=1578305236132"></script>
+    <script src="fixdata.js"></script>
+    <script src="map.js"></script>
+    <script src="line.js"></script>
+</head>
+
+<body>
+    <a href="main.html">back</a>
+    <div id="getId">
+        <script>
+            var provinceName = getQueryString("name");
+            document.write(provinceName);
+        </script>
+        <div class="show" id="tabC1">
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line1"></div>
+        </div>
+        <div class="hidden" id="tabC2">
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line2"></div>
+        </div>
+        <div class="hidden" id="tabC3">
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line3"></div>
+        </div>
+        <div class="hidden" id="tabC4">
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line4"></div>
+        </div>
+        <div class="tabT">
+            <ul class="tab">
+                <li id="tabId1" class="current" onclick="tab('tabId1','tabC1');">疫情新增趋势</li>
+                <li id="tabId2" onclick="tab('tabId2','tabC2');">确诊疑似趋势</li>
+                <li id="tabId3" onclick="tab('tabId3','tabC3');">累计治愈死亡</li>
+                <li id="tabId4" onclick="tab('tabId4','tabC4');">治愈率死亡率</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
 </html>

@@ -1,3 +1,19 @@
+var Data = [];
+switch (getQueryString("name")) {
+    case "安徽":
+        Data = data_anhui;
+        break;
+
+}
+Data = totalConfirmed(getQueryString("name"));
+Data.reverse();
+var quezhen = [];
+var datechoose = document.getElementById('choose-date');
+var riqi = getDate(datechoose.value);
+Data.forEach(element => {
+    quezhen.push(element.value)
+    riqi.push(element.data)
+});
 lineTabData1 = [{
         name: '新增确诊',
         type: 'line',
@@ -10,7 +26,8 @@ lineTabData1 = [{
                 }
             }
         },
-        data: [120, 132, 101, 134, 90, 230, 210]
+        //data: [120, 132, 101, 134, 90, 230, 210]
+        data: Data
     },
     {
         name: '新增疑似',
@@ -24,7 +41,8 @@ lineTabData1 = [{
                 }
             }
         },
-        data: [220, 182, 191, 234, 290, 330, 310]
+        //data: [220, 182, 191, 234, 290, 330, 310]
+        data: Data
     },
     {
         name: '新增治愈',
@@ -38,7 +56,8 @@ lineTabData1 = [{
                 }
             }
         },
-        data: [150, 232, 201, 154, 190, 330, 410]
+        data: Data
+            //data: [150, 232, 201, 154, 190, 330, 410]
     },
     {
         name: '新增死亡',
@@ -52,7 +71,8 @@ lineTabData1 = [{
                 }
             }
         },
-        data: [320, 332, 301, 334, 390, 330, 320]
+        data: Data
+            //data: [320, 332, 301, 334, 390, 330, 320]
     },
 ];
 lineLegend1 = ['新增确诊', '新增疑似', '新增治愈', '新增死亡'];
@@ -234,7 +254,8 @@ function echartsLine(key) {
         xAxis: [{
             type: 'category',
             boundaryGap: false,
-            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            data: riqi
+                //data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
         }],
         yAxis: [{
             type: 'value'

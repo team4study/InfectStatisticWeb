@@ -9,6 +9,7 @@
     <script src="https://www.echartsjs.com/examples/vendors/echarts/echarts.min.js?_v_=1578305236132"></script>
     <!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->
     <script src="https://www.echartsjs.com/examples/vendors/echarts/map/js/china.js?_v_=1578305236132"></script>
+    <script src="fixdata.js"></script>
     <script src="map.js"></script>
     <script src="line.js"></script>
 </head>
@@ -55,24 +56,24 @@
 
     <!-- 为ECharts-map准备一个具备大小（宽高）的Dom -->
     <div id="global-map"></div>
-    
+
     <div id="getId">
         <div class="show" id="tabC1">
-			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-			<div id="global-line1"></div>
-		</div>
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line1"></div>
+        </div>
         <div class="hidden" id="tabC2">
-			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-			<div id="global-line2"></div>
-		</div>
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line2"></div>
+        </div>
         <div class="hidden" id="tabC3">
-			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-			<div id="global-line3"></div>
-		</div>
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line3"></div>
+        </div>
         <div class="hidden" id="tabC4">
-			<!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
-			<div id="global-line4"></div>
-		</div>
+            <!-- 为ECharts-line准备一个具备大小（宽高）的Dom -->
+            <div id="global-line4"></div>
+        </div>
         <div class="tabT">
             <ul class="tab">
                 <li id="tabId1" class="current" onclick="tab('tabId1','tabC1');">疫情新增趋势</li>
