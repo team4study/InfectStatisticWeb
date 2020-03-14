@@ -7,9 +7,35 @@
 // }
 var totConf = totalConfirmed(getQueryString("name"));
 //Data.reverse();
-var quezhen = [];
+var curConf = currentConfirmed(getQueryString("name"));
+var totDead = totalDead(getQueryString("name"));
+var totcure = totalCure(getQueryString("name"));
 var datechoose = document.getElementById('choose-date');
 var riqi = getDate("2020-02-03");
+var newConf = [];
+for (i = 0; i < totConf.length; i++) {
+    if (i == 0)
+        newConf.push(totConf[i]);
+    else {
+        newConf.push(totConf[i] - totConf[i - 1]);
+    }
+}
+var newCure = [];
+for (i = 0; i < totcure.length; i++) {
+    if (i == 0)
+        newCure.push(totcure[i]);
+    else {
+        newCure.push(totcure[i] - totcure[i - 1]);
+    }
+}
+var newDead = [];
+for (i = 0; i < totDead.length; i++) {
+    if (i == 0)
+        newDead.push(totDead[i]);
+    else {
+        newDead.push(totDead[i] - totDead[i - 1]);
+    }
+}
 // Data.forEach(element => {
 //     quezhen.push(element.value)
 //     riqi.push(element.data)
@@ -18,7 +44,7 @@ var riqi = getDate("2020-02-03");
 lineTabData1 = [{
         name: '新增确诊',
         type: 'line',
-        tiled: '总量',
+        //tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#e83132', //改变折线点的颜色
@@ -28,12 +54,12 @@ lineTabData1 = [{
             }
         },
         //data: [120, 132, 101, 134, 90, 230, 210]
-        data: totConf
+        data: newConf
     },
     {
         name: '新增疑似',
         type: 'line',
-        tiled: '总量',
+        //tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#ec9217', //改变折线点的颜色
@@ -48,7 +74,7 @@ lineTabData1 = [{
     {
         name: '新增治愈',
         type: 'line',
-        tiled: '总量',
+        //tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#10aeb5', //改变折线点的颜色
@@ -57,13 +83,13 @@ lineTabData1 = [{
                 }
             }
         },
-        data: totConf
+        data: newCure
             //data: [150, 232, 201, 154, 190, 330, 410]
     },
     {
         name: '新增死亡',
         type: 'line',
-        tiled: '总量',
+        //tiled: '总量',
         itemStyle: {
             normal: {
                 color: '#4d5054', //改变折线点的颜色
@@ -72,7 +98,7 @@ lineTabData1 = [{
                 }
             }
         },
-        data: totConf
+        data: newDead
             //data: [320, 332, 301, 334, 390, 330, 320]
     },
 ];
@@ -89,7 +115,7 @@ lineTabData2 = [{
                 }
             }
         },
-        data: [220, 182, 191, 234, 290, 330, 310]
+        data: curConf
     },
     {
         name: '现有疑似',
@@ -117,7 +143,7 @@ lineTabData2 = [{
                 }
             }
         },
-        data: [320, 332, 301, 334, 390, 330, 320]
+        data: totConf
     }
 ];
 lineLegend2 = ['现有确诊', '现有疑似', '累计确诊'];
@@ -133,7 +159,7 @@ lineTabData3 = [{
                 }
             }
         },
-        data: [150, 232, 201, 154, 190, 330, 410]
+        data: totcure
     },
     {
         name: '死亡人数',
@@ -147,7 +173,7 @@ lineTabData3 = [{
                 }
             }
         },
-        data: [320, 332, 301, 334, 390, 330, 320]
+        data: totDead
     }
 ];
 lineLegend3 = ['治愈人数', '死亡人数'];
