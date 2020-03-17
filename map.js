@@ -13,16 +13,40 @@ function init2() {
     }
 }
 
+function changeHead(index) {
+    var tmpCurConf = currentConfirmed("全国");
+    var tmpTotConf = totalConfirmed("全国");
+    var tmpTotDeath = totalDead("全国");
+    var tmpTotCure = totalCure("全国");
+    //var time = getDate(date);
+    //index = date.length - 1;
+    document.querySelectorAll('#header strong')[0].textContent = tmpCurConf[index];
+    document.querySelectorAll('#header strong')[1].textContent = "无数据";
+    document.querySelectorAll('#header strong')[2].textContent = "无数据";
+    document.querySelectorAll('#header strong')[3].textContent = tmpTotConf[index];
+    document.querySelectorAll('#header strong')[4].textContent = tmpTotDeath[index];
+    document.querySelectorAll('#header strong')[5].textContent = tmpTotCure[index];
+}
+
 function echartsMap(mapType) {
     // 基于准备好的dom，初始化echarts图表
     var myChart = echarts.init(document.getElementById('global-map'));
     var datechoose = document.getElementById('choose-date');
-    var maptime = getDate(datechoose);
+    var maptime = getDate(datechoose.value);
+    console.log(maptime);
+    var dataFlag = false;
+    // for (i = 0; i < maptime.length; i++) {
+    //     if (datechoose.value == maptime[i])
+    //         dataFlag = true;
+    // }
+    // if (dataFlag == false)
+    //     datechoose.value = maptime[maptime.length - 1]
     var index = maptime.length - 1;
-    var anhui, beijing, fujian, gansu, guangdong, guangxi, guizhou, hainan, hebei, henan
-    var heilongjiang, hubei, hunan, jilin, jiangsu, jiangxi, liaoning, neimengggu, ningxia, qinghai
-    var shandong, shan1xi, shan3xi, shanghai, sichuan, tianjin, xinjiang, yunnan, zhejiang, chongqing
-    var xizang, aomen, taiwan, xianggang
+    var anhui, beijing, fujian, gansu, guangdong, guangxi, guizhou, hainan, hebei, henan;
+    var heilongjiang, hubei, hunan, jilin, jiangsu, jiangxi, liaoning, neimengggu, ningxia, qinghai;
+    var shandong, shan1xi, shan3xi, shanghai, sichuan, tianjin, xinjiang, yunnan, zhejiang, chongqing;
+    var xizang, aomen, taiwan, xianggang;
+    changeHead(index);
     if (mapType == 1) {
         tempdata1 = currentConfirmed("安徽");
         if (index >= tempdata1.length)
@@ -274,7 +298,7 @@ function echartsMap(mapType) {
     // 为echarts对象加载数据 
     myChart.setOption(option, true, true);
     myChart.on('click', function(param) {
-        window.location.href = "province.html?name=" + param.name;
+        window.location.href = "province.html?name=" + param.name + "&date=" + datechoose.value;
     })
 }
 
